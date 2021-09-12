@@ -1,0 +1,108 @@
+{% extends 'home_app/index.html' %}
+{% load static %}
+{% block Multiple_Gmail %}
+
+    <!-- Upload CSV File -->
+        <div class="container rounded p-2 my-4 d-grid upload_border">
+            <div class='fs-3 fw-bold upload_text'>Upload CSV File</div>
+            <div class='fw-bold example mt-2 ps-2 py-2'>
+                <a href="{% static 'Send_Multiple_Gmails.png' %}" alt="Example Image">Example : <span class="example_image">CSV File Format</span></a>
+            </div>
+            <form action="{% url 'send_multiple_gmail' %}" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+                <div class="input-group mt-2">
+                    <input name='csv_file' type="file" class="form-control upload_file" onchange="Upload()" id="fileUpload"  aria-describedby="inputGroupFileAddon04" aria-label="Upload" required>
+                </div>
+                <div class="d-grid mt-2">
+                    <input class="btn upload_purple" type="submit" id="inputGroupFileAddon04" value="Send Gmails" />
+                </div>
+            </form>
+        </div>
+    <!-- Upload CSV File -->
+
+    <!-- Display Contents of CSV File -->
+        <div class="container rounded p-2 mb-4 d-grid upload_border table_visible">
+            <div class='fs-3 fw-bold upload_text'>Your CSV File Content</div>
+            <div class="container rounded py-2 mt-2 upload_border table_auto_scroll">
+                <center id="dvCSV">
+                </center>
+            </div>
+        </div>
+    <!-- Display Contents of CSV File -->
+
+    {% if total_email %}
+        <!-- Download All Email's Report -->
+                <div class="container rounded p-2 mb-4 d-flex flex-column upload_border">
+                    <div class='fs-3 fw-bold upload_text'>Download Email's Report as CSV File</div>
+                    <div class="container rounded py-2 mt-2 upload_border d-grid">
+                        <a href="{% url 'download_all_csv' %}" class="btn upload_purple purple_hover"><i class="fas fa-file-download"></i> ALL Emails</a>
+                    </div>
+                    <div class="container rounded py-2 mt-2 border border-1 border-success d-grid">
+                        <a href="{% url 'download_success_csv' %}" class="btn btn-success"><i class="fas fa-file-download"></i> Successful Emails</a>
+                    </div>
+                    <div class="container rounded py-2 mt-2 border border-1 border-danger d-grid">
+                        <a href="{% url 'download_failure_csv' %}" class="btn btn-danger"><i class="fas fa-file-download"></i> Failure Emails</a>
+                    </div>
+                </div>
+        <!-- Download All Email's Report -->
+    {% endif %}
+
+    <!-- Success : Emails send successfully -->
+        {% if successfully_email_send %}
+            <div class="container rounded p-2 mb-4 flex upload_border border-success">
+                <div class='fs-3 fw-bold email_sent_text text-center'>{{email_send_successfully}} / {{total_email}} Email(s) Send Successfully !</div>
+                <div class="d-flex ms-0">
+                    <div class='flex-grow-1 fs-3 fw-bold my-2 email_sent_text'>
+                        <input type="search" name="search_email_success" onkeyup='SearchEmailSuccess()' id="search_email_success" placeholder="Search Email Address" class="email_sent_text_success"/>
+                    </div>
+                </div>
+                <div class="container rounded py-2 border_success table_auto_scroll">
+                    <div class="row">
+                        {% for i in successfully_email_send %}
+                            <div class='col-md-3 col-sm-6 col-12 div_success'>
+                                <div class="card text-white bg-success mb-3" style="max-width: 15rem;">
+                                    <div class="card-header">{{i.4}}</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{i.2}}</h5>
+                                        <p class="card-text">{{i.3}}</p>
+                                    </div>
+                                    <div class="card-footer div_email_success">To : {{i.1}}</div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    <!-- Success : Emails send successfully -->
+
+    <!-- Failure : Emails send unsuccessfully -->
+        {% if failure_email_send %}
+            <div class="container rounded p-2 mb-4 flex upload_border border-danger">
+                <div class='fs-3 fw-bold email_not_sent_text'>{{email_send_failure}} / {{total_email}} Email(s) NOT Send Successfully !</div>
+                <div class="d-flex ms-0">
+                    <div class='flex-grow-1 fs-3 fw-bold email_not_sent_text my-2'>
+                        <input type="search" name="search_email_failure" onkeyup='SearchEmailFailure()' id="search_email_failure" placeholder="Search Email Address" class="email_not_sent_text_failure"/>
+                    </div>
+                </div>
+                <div class="container rounded py-2 border_failure table_auto_scroll">
+                    <div class="row">
+                        {% for i in failure_email_send %}
+                            <div class='col-md-3 col-sm-6 col-12 div_failure'>
+                                <div class="card text-white bg-danger mb-3" style="max-width: 15rem;">
+                                    <div class="card-header">{{i.4}}</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{i.2}}</h5>
+                                        <p class="card-text">{{i.3}}</p>
+                                    </div>
+                                    <div class="card-footer div_email_failure">To : {{i.1}}</div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    <!-- Failure : Emails send unsuccessfully -->
+
+{% endblock Multiple_Gmail %}

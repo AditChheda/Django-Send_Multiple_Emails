@@ -1,0 +1,135 @@
+.upload_purple{
+    background-color: rgb(93, 63, 211);
+    color: rgb(255, 255, 255);
+}
+
+.purple_hover:hover{
+    background-color: rgb(58, 39, 136);
+    color: rgb(255, 255, 255);
+}
+
+.upload_purple:hover{
+    box-shadow: 0 0 0px 0px rgba(0,0,0,0);
+    color: white;
+}
+
+.upload_border{
+    border: 1px solid rgb(93, 63, 211);
+} 
+
+.upload_text{
+    color: rgb(93, 63, 211);
+    border: 1px solid rgb(93, 63, 211);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.example{
+    color: rgb(93, 63, 211);
+    border: 1px solid rgb(93, 63, 211);
+    border-radius: 4px;
+}
+
+.example a{
+    text-decoration: none;
+    color:rgb(93, 63, 211);
+}
+
+.example_image{
+    background-color: rgb(93, 63, 211);
+    color: white;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.example_image:hover{
+    background-color: rgb(59, 41, 131);
+}
+
+.email_sent_text{
+    color: rgb(102, 206, 61);
+    border: 1px solid rgb(102, 206, 61);
+    border-radius: 4px
+}
+
+.email_sent_text_success{
+    border: 0px solid black;
+    margin: 0px 1px;
+    outline: none;
+    color:rgb(102, 206, 61);
+    width: 99%;
+}
+
+.email_not_sent_text{
+    color: rgb(206, 61, 61);
+    border: 1px solid rgb(206, 61, 61);
+    text-align: center;
+    border-radius: 4px
+}
+
+.email_not_sent_text_failure{
+    border: 0px solid black;
+    margin: 0px 1px;
+    outline: none;
+    color:rgb(206, 61, 61);
+    width: 99%;
+}
+
+.upload_file:hover, .upload_file:focus{
+    box-shadow: 0 0 0px 0px rgba(0,0,0,0);
+    border: 1px solid rgb(93, 63, 211);
+}
+
+#dvCSV table td{
+    padding: 5px;
+    border: 2px solid rgb(93, 63, 211);
+}
+
+.table_auto_scroll{
+    height: 50vh;
+    overflow:auto;
+}
+
+.border_failure{
+    border: 1px solid rgb(206, 61, 61);
+}
+
+.border_success{
+    border: 1px solid rgb(102, 206, 61);
+}
+
+.border_success::-webkit-scrollbar, div::-webkit-scrollbar{
+    width: 12px;
+}
+
+.border_success::-webkit-scrollbar-track, div::-webkit-scrollbar-track{
+    border: 7px solid white;
+    box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
+}
+
+.border_success::-webkit-scrollbar-thumb, div::-webkit-scrollbar-thumb{
+    background: linear-gradient(0deg, rgba(102, 206, 61, 1) 15%, rgba(102, 206, 61, 1) 95%);
+    border-radius: 0px;
+}
+
+.border_success::-webkit-scrollbar-thumb:hover, div::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(0deg, rgba(102, 206, 61, 1) 15%, rgba(102, 206, 61, 1) 95%);
+}
+
+.border_failure::-webkit-scrollbar, div::-webkit-scrollbar{
+    width: 12px;
+}
+
+.border_failure::-webkit-scrollbar-track, div::-webkit-scrollbar-track{
+    border: 7px solid white;
+    box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
+}
+
+.border_failure::-webkit-scrollbar-thumb, div::-webkit-scrollbar-thumb{
+    background: linear-gradient(0deg, rgba(206, 61, 61, 1) 15%, rgba(206, 61, 61, 1) 95%);
+    border-radius: 0px;
+}
+
+.border_failure::-webkit-scrollbar-thumb:hover, div::-webkit-scrollbar-thumb:hover{
+    background: linear-gradient(0deg, rgba(206, 61, 61, 1) 15%, rgba(206, 61, 61, 1) 95%);
+}

@@ -1,0 +1,79 @@
+.navbar_bg_color{
+    background-color: rgb(93, 63, 211);
+}
+
+.navbar_text_color{
+    color: white
+}
+
+.home_search_input{
+    border: 0;
+    outline: none;
+}
+
+.home_search_button{
+    border: 1px solid white;
+    outline: none;
+    color: white;
+    background-color: rgb(69, 34, 209);
+    border-radius: 4px;
+}
+
+.text_purple ,.text_purple:hover{
+    color: rgb(93, 63, 211);
+}
+
+.bg_purple, .bg_purple:hover{
+    color: rgb(69, 34, 209);
+}
+
+.google_signin_button, .google_signin_button:active, .google_signin_button:focus{
+    background-color: rgb(255, 8, 8);
+    color: white;
+    outline: none;
+    text-decoration: none;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.sign_up_button, .sign_up_button:hover{
+    text-decoration:none; 
+    color:white;
+    background-color: rgb(93, 63, 211);
+    padding: 2px;
+    border-radius: 4px;
+}
+.login_table{
+    text-align:left;
+    width: 355px;
+    border: none;
+    text-decoration: none;
+}
+
+.login_table input{
+    border: 1px solid rgb(69, 34, 209);
+    outline: none;
+    color: rgb(69, 34, 209);
+}
+
+.logged_in_user{
+    background-color: rgb(69, 34, 209);
+    border: 0px;
+    color: white;
+    border: 1px solid white;
+}
+
+.sign_in_button{
+    background-color:rgb(93, 63, 211);
+    color: white;
+    border-radius: 4px;
+    outline: none;
+}
+
+.sign_in_page{
+    background-color: rgb(93, 63, 211);
+}
+
+.purple{
+    color: rgb(93, 63, 211);
+}
